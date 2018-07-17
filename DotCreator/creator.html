@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <script src="./jquery-3.3.1.min.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            var xnum;
+            function displayResult() {
+                var target = $("#result");
+                var header = "#define ROW "+xnum+"\nshort pixelmatrix[NUM][ROW] = {\n";
+                var footer = "};";
+                var output = "";
+                for (var tr = 0; tr < 16; tr++) {
+                    output += "{ ";
+                    for (var td = 0; td < xnum; td++) {
+                        var targetTd = $("#canvas table tr.tr"+tr+" td").eq(td);
+                        if(targetTd.hasClass("selected")){
+                            output += "1";
+                        } else {
+                            output += "0";
+                        }
+                        if(td == (xnum-1)){
+                            output += " },\n";
+                        } else {
+                            output += ", ";
+                        }
+                    }
+                }
+                target.html(header + output + footer);
+            }
+            function clickTd(yaxis,xaxis){
+                var targetTd = $("#canvas table tr.tr"+xaxis+" td").eq(yaxis);
+                console.log("click");
+                if(targetTd.hasClass("selected")){
+                    targetTd.removeClass("selected");
+                    console.log("unselect " + xaxis + "," + yaxis);
+                } else {
+                    targetTd.addClass("selected");
+                    console.log("select " + xaxis + "," + yaxis);
+                }
+                displayResult();
+    	    }
+            function tableSet() {
+                var target = "#canvas table";
+                var amount = $("#num").val();
+                var classnumTR = "tr";
+                var trclass;
+                var tr;
+                xnum = amount;
+                $(target).html("");
+                for (var i = 0; i < 16; i++) {
+                    trclass = classnumTR + i;
+                    $("<tr></tr>").addClass(trclass).appendTo($(target));
+                    var targettr = $(target + " tr." + trclass);
+                    for (var j = 0; j < amount; j++) {
+                        targettr.append("<td onclick='clickTd("+j+","+i+")'></td>");
+                    }
+                }
+            }
+        </script>
+        <style>
+            #canvas {
+                height: 640px;
+            }
+            #canvas table {
+                table-layout: fixed;
+                margin: 0px;
+                border-spacing: 1px;
+            }
+            #canvas table td {
+                border: 1px solid gray;
+                width: 30px; height:30px;
+            }
+            #canvas table tr td.selected {
+                background-color: gray;
+            }
+            #code {
+                width: 100%;
+                margin: 0px;
+            }
+            #result {
+                width: 100%; height: 100%;
+                margin: 0px;
+            }
+        </style>
+        <title>LED DOTS CREATOR v1.0</title>
+    </head>
+    <body>
+        <div id="canvas">
+            <input id="num" type="text" name="row" value="16" placeholder="横のLED数">
+            <input type="submit" name="submit" value="つくる" onclick="tableSet()">
+            <table></table>
+        </div>
+        <div id="code">
+            <textarea id="result" name="code" rows="20" cols="100"></textarea>
+        </div>
+    </body>
+</html>
