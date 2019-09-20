@@ -1,0 +1,69 @@
+html {
+    width: 1530px;
+    height: 824px;
+    margin: 0;
+    background-color: black;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+img {
+    width: 1530px;
+    height: 824px;
+    margin: 0px;
+    padding: 0px;
+}
+
+div.box {
+    position: absolute;
+    display: block;
+    height: 230px;
+    width: 42px;
+    margin: 0px;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 127, 255, 0);
+    border: 1px solid skyblue;
+    cursor: pointer;
+}
+div.box:hover {
+    background-color: rgba(0, 127,255,0.3);
+}
+
+div.box.x {
+    top: 30px;
+    left: 230px;
+    height: 55px;
+    width: 1080px;
+}
+div.box.y {
+    top: 735px;
+    left: 230px;
+    height: 55px;
+    width: 1080px;
+}
+table {
+    width: 1080px;
+    height: 565px;
+    position: absolute;
+    top: 130px;
+    left: 230px;
+    table-layout: fixed;
+    border-spacing: 1px;
+}
+tr.a td, tr.f td {
+    background-color: rgba(0, 127,255,0);
+    border: 1px solid skyblue;
+    cursor: pointer;
+}
+tr.a td:hover, tr.f td:hover {
+    background-color: rgba(0, 127,255,0.3);
+}
+
+tr.river td {
+    height: 90px;
+}
