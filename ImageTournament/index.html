@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Image Tournament!</title>
+    <script src="./script/jquery-3.2.1.min.js" charset="utf-8"></script>
+    <script src="result.js" charset="utf-8"></script>
+    <script src="./script/master.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="style/style.css">
+  </head>
+  <body>
+    <h1>Image Tournament!</h1>
+    <h2>~Most favorite image is...~</h2>
+    <p>Find out Poinsts <span id="findOutRank"></span> ?</p>
+    <button type="button" name="button" onclick="battleStart();">Battle Start!</button>
+    <div id="battle_field">
+      <table>
+        <tr>
+          <td class="title" colspan="2">Which do you like?</td>
+        </tr>
+        <tr>
+          <td class="image a" onclick="selectImage(0);">Image A</td>
+          <td class="image b" onclick="selectImage(1);">Image B</td>
+        </tr>
+      </table>
+    </div>
+    <div id="ranking">
+
+    </div>
+  </body>
+</html>

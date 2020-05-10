@@ -1,0 +1,22 @@
+var images = {
+    "DSC07990.jpg": 0,
+    "DSC10008171.jpg": 0,
+    "DSC10008185.jpg": 0,
+    "DSC10008321.jpg": 0,
+    "DSC10008393.jpg": 0,
+    "DSC10008403.jpg": 0,
+    "DSC10608067.jpg": 0,
+    "DSC_0195.png": 0,
+    "DSC_0199.jpg": 0,
+    "DSC_0210.png": 0,
+    "DSC_0216.jpg": 0,
+    "DSC_0225.jpg": 0,
+    "DSC_0230.jpg": 0,
+    "DSC_0245.jpg": 0,
+    "DSC_0248.jpg": 0,
+    "DSC_0293.png": 0,
+    "DSC_0348.png": 0,
+    "DSC_0671.jpg": 0,
+    "HanedaAirPort.png": 0,
+    "IMG_4762.PNG": 0
+}

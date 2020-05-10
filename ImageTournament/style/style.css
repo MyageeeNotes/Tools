@@ -1,0 +1,14 @@
+#ranking img {
+  width: 100px; height: 100px;
+}
+
+#battle_field td.title { text-align: center; }
+#battle_field td.image {
+  background-color: silver;
+  width: 400px; height: 300px;
+  text-align: center;
+  cursor: pointer;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
